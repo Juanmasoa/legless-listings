@@ -1,0 +1,36 @@
+<h1>New Listing</h1>
+<%= form_with model: @listing, local: true do |form| %>
+<%# form_with by default uses Rejex and that is sth we don´t want %>
+<%# to avoid that from happening we add ,local: true %>
+
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+        <%# now the label knows about the argument. We are making the label smart %>
+        <%# we are using ruby helpers %>
+        <%# labeling is useful for highlighting the input when clicking on the label %>
+    </div>
+    <div>
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+    </div>
+    <div>
+        <%= form.label :price %>
+        <%= form.number_field :price, min: 0 %>
+    </div>
+    <div>
+        <%= form.label :deposit %>
+        <%= form.number_field :deposit %>
+    </div>
+    <div>
+        <%= form.label :date_of_birth %>
+        <%= form.date_field :date_of_birth %>
+    </div>
+    <div>
+        <%= form.label :diet %>
+        <%= form.text_field :diet %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
