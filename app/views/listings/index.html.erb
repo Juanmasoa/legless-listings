@@ -1,16 +1,9 @@
 
-<h1>Snake Listings</h1>
+<h1>Your profile</h1>
 
-<% @listings.each do |listing|%>
-    <div class = "card">
-    <%= image_tag listing.picture if listing.picture.attached? %>
-    <p> <%= listing.title %></p>
-    <p> <%= listing.description %></p>
-    <p> <%= listing.breed.name %></p>
-    <%= link_to "show", listing_path(listing.id) %>
-    <%= link_to "edit", edit_listing_path(listing.id) %>
-    </div>
-
+<% @user.each do |features|%>
+    <%= image_tag user.picture if user.picture.attached? %>
+    <p> <%= user.first_name %><%= user.last_name %></p>
 <%end%>
 
     
